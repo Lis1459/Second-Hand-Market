@@ -42,7 +42,7 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 .header {
-  color: var(--color_header-text);
+  color: var(--color-header-text);
   background-color: var(--color-header-background);
   display: flex;
   padding: 0px 48px;

@@ -11,15 +11,18 @@
   --vt-c-indigo: #2c3e50;
 
   --vt-c-mandy: #e55a63;
+
+  --vt-c-silvery-while: #e4e4e4;
 }
 
 /* semantic color variables for this project */
 :root {
   --color-background: var(--vt-c-white);
+  --color-header-background: var(--vt-c-mandy);
+  --color-header-text: var(--vt-c-white);
 
-  --color-header-background: var(var(--vt-c-mandy));
-
-  --color_header-text: vat(var(--vt-c-white));
+  --color-border-tabs: var(--vt-c-silvery-while);
+  --color-background-tabs: var(--vt-c-white);
 }
 
 *,
