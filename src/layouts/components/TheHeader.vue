@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { IconCart, IconHeart, IconProfile, IconSearch } from "@/components/icons";
 import InputText from "primevue/inputtext";
 import { RouterLink } from "vue-router";
 </script>
@@ -6,7 +7,7 @@ import { RouterLink } from "vue-router";
   <header class="header">
     <div class="header__left">
       <div class="logo">
-        <img src="../assets/icons/LogoIcon.svg" alt="Logo" class="logo__icon" />
+        <img src="../../assets/icons/LogoIcon.svg" alt="Logo" class="logo__icon" />
         <div class="logo__text">
           <div>2ND</div>
           <div>HAND</div>
@@ -15,7 +16,7 @@ import { RouterLink } from "vue-router";
       </div>
 
       <div class="search">
-        <img src="../assets/icons/SearchIcon.svg" alt="Search" />
+        <IconSearch class="search-icon" />
         <InputText class="search-input" />
       </div>
     </div>
@@ -27,14 +28,14 @@ import { RouterLink } from "vue-router";
       </nav>
       <div class="icon-group">
         <div class="favorites-group">
-          <img src="../assets/icons/HeartIcon.svg" alt="Favorites" />
+          <IconHeart class="favorites-icon" />
           <p class="favorites-count">0</p>
         </div>
         <div class="cart-group">
-          <img src="../assets/icons/CartIcon.svg" alt="Cart" />
+          <IconCart class="cart-icon" />
           <p class="cart-count">0</p>
         </div>
-        <img src="../assets/icons/ProfileIcon.svg" alt="Profile" />
+        <IconProfile class="profile-icon" />
       </div>
     </div>
   </header>
@@ -99,8 +100,36 @@ import { RouterLink } from "vue-router";
   height: 32px;
 }
 
+.search-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.favorites-icon,
+.cart-icon,
+.profile-icon {
+  width: 20px;
+  height: 20px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.favorites-icon {
+  color: #bb464e;
+}
+
 .search-input {
+  border: none;
+  background-color: transparent;
   width: 190px;
+  color: inherit;
+  font-size: 16px;
+}
+
+.search-input:focus,
+.search-input:focus-visible {
+  outline: none;
+  caret-color: white;
 }
 
 .favorites-group,
