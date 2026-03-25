@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Card from "@/components/Card.vue";
+import ProductCard from "@/components/ProductCard.vue";
 import { IconAngleBottom, IconAngleLeft, IconAngleRight } from "@/components/icons";
 import { useProductStore } from "@/stores/product.store";
 import { getVisiblePages } from "@/utils/helper";
@@ -80,7 +80,7 @@ const rowsPerPage = [10, 20, 30, 40, 50];
       <div class="catalog">
         <div v-if="productStore.loadingProducts" class="loader">Loading...</div>
         <div v-else class="catalog-grid">
-          <Card
+          <ProductCard
             v-for="product in productStore.products"
             :key="product.id"
             :title="product.title"
@@ -270,7 +270,6 @@ const rowsPerPage = [10, 20, 30, 40, 50];
 .all-shops {
   width: 100%;
   padding: 48px 48px 0px 48px;
-  /* min-height: calc(100vh - 80px - 88px - 84px); */
   display: flex;
   flex-direction: column;
 }
@@ -297,7 +296,6 @@ const rowsPerPage = [10, 20, 30, 40, 50];
 }
 
 .catalog {
-  /* min-height: calc(100vh - 80px - 88px - 84px); */
   width: 100%;
 }
 
