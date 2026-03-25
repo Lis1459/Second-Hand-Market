@@ -13,4 +13,10 @@ import CategoryTabs from "./components/CategoryTabs.vue";
   </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+</style>

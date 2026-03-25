@@ -13,7 +13,7 @@ const categoryList = ["Women", "Men", "Unisex", "Children", "New"];
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px 0px;
+  padding: 16px 20px;
   background-color: var(--color-background-tabs);
 }
 
@@ -31,5 +31,11 @@ const categoryList = ["Women", "Men", "Unisex", "Children", "New"];
 
 .category:first-child {
   border: none;
+}
+
+@media (max-width: 500px) {
+  .category {
+    padding: 7px 11px;
+  }
 }
 </style>

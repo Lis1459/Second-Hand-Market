@@ -28,6 +28,8 @@
 
   --color-background-card: var(--vt-c-white);
   --color-card-text: var(--vt-c-dark-gray);
+
+  --color-category-filter-text: var(--vt-c-dark-gray);
 }
 
 *,

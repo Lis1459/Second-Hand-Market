@@ -139,4 +139,24 @@ import { RouterLink } from "vue-router";
   gap: 4px;
   font-size: 10px;
 }
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  .header__left {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .header__right {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 </style>

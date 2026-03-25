@@ -45,12 +45,21 @@ const discount = computed(() => {
 .product-card {
   background-color: var(--color-background-card);
   min-width: 240px;
+  /* max-width: 300px; */
+
   border-radius: 16px;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .image-wrapper {
+  width: 100%;
   position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
 }
 
 .image-wrapper img {
@@ -76,9 +85,13 @@ const discount = computed(() => {
   font-size: 16px;
   line-height: 100%;
   margin: 12px 16px;
+
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .footer {
+  align-self: flex-end;
   display: flex;
   justify-content: space-between;
   align-items: center;
