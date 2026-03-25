@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { IconCart, IconHeart, IconProfile, IconSearch } from "@/components/icons";
+import { useAuthStore } from "@/stores/auth.store";
+import { useRouter } from "vue-router";
 import InputText from "primevue/inputtext";
 import { RouterLink } from "vue-router";
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+const handleLogOut = () => {
+  authStore.logout();
+  router.push("/login");
+};
 </script>
 <template>
   <header class="header">
@@ -35,7 +45,7 @@ import { RouterLink } from "vue-router";
           <IconCart class="cart-icon" />
           <p class="cart-count">0</p>
         </div>
-        <IconProfile class="profile-icon" />
+        <IconProfile class="profile-icon" @click="handleLogOut" />
       </div>
     </div>
   </header>
