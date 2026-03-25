@@ -44,7 +44,7 @@ const discount = computed(() => {
 <style>
 .product-card {
   background-color: var(--color-background-card);
-  width: 220px;
+  min-width: 240px;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -65,7 +65,7 @@ const discount = computed(() => {
   right: 8px;
   width: 20px;
   height: 20px;
-  color: white;
+  color: #7d7d7d;
   cursor: pointer;
 }
 
@@ -76,11 +76,6 @@ const discount = computed(() => {
   font-size: 16px;
   line-height: 100%;
   margin: 12px 16px;
-}
-
-.brand {
-  font-size: 13px;
-  color: #777;
 }
 
 .footer {
