@@ -167,6 +167,7 @@ const handleLogin = async () => {
   font-weight: 600;
   border-radius: 6px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .password {
