@@ -88,10 +88,6 @@ console.log(props.product);
   font-weight: 600;
 }
 
-/* .reserved-cart-item__value {
-  
-} */
-
 .reserved-cart-item__discounted {
   font-weight: 600;
 }

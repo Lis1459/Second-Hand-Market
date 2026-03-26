@@ -87,9 +87,16 @@ defineExpose({ openChat });
         <span class="message-text">{{ message.text }}</span>
       </div>
     </div>
-    <div class="chat-input">
-      <input v-model="newMessage" @keyup.enter="sendMessage" placeholder="Введите сообщение..." />
-      <button @click="sendMessage" :disabled="!newMessage.trim()">Отправить</button>
+    <div class="chat-input-group">
+      <input
+        v-model="newMessage"
+        @keyup.enter="sendMessage"
+        placeholder="Введите сообщение..."
+        class="chat-input"
+      />
+      <button @click="sendMessage" :disabled="!newMessage.trim()" class="chat-input__button">
+        Отправить
+      </button>
     </div>
   </div>
 </template>
@@ -153,13 +160,13 @@ defineExpose({ openChat });
   color: white;
 }
 
-.chat-input {
+.chat-input-group {
   display: flex;
   padding: 10px;
   border-top: 1px solid #eee;
 }
 
-.chat-input input {
+.chat-input {
   flex: 1;
   padding: 8px;
   border: 1px solid #ccc;
@@ -167,7 +174,7 @@ defineExpose({ openChat });
   margin-right: 8px;
 }
 
-.chat-input button {
+.chat-input__button {
   padding: 8px 12px;
   background: #007bff;
   color: white;
@@ -176,7 +183,7 @@ defineExpose({ openChat });
   cursor: pointer;
 }
 
-.chat-input button:disabled {
+.chat-input__utton:disabled {
   background: #ccc;
   cursor: not-allowed;
 }
