@@ -39,7 +39,7 @@ const scrollToBottom = () => {
 };
 
 onMounted(() => {
-  ws.value = new WebSocket("wss://ws.ifelse.io");
+  ws.value = new WebSocket(import.meta.env.VITE_WEBSOKET_URL);
 
   ws.value.onopen = () => {
     console.log("WebSocket connected");
