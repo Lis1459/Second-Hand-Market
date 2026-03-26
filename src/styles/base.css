@@ -30,6 +30,8 @@
   --color-card-text: var(--vt-c-dark-gray);
 
   --color-category-filter-text: var(--vt-c-dark-gray);
+
+  --color-reserved-cart-text: var(--vt-c-dark-gray);
 }
 
 *,

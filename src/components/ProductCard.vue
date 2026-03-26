@@ -21,7 +21,6 @@ const discount = computed(() => {
       <div class="image-wrapper">
         <img :src="props.thumbnailUrl" alt="product" />
         <IconHeart class="favorite" />
-        <!-- <i class="pi pi-heart-fill favorite"></i> -->
       </div>
     </template>
 

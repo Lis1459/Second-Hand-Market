@@ -33,7 +33,7 @@ const handleLogOut = () => {
     <div class="header__right">
       <nav class="navigation">
         <RouterLink to="#" class="navigation__item">About us</RouterLink>
-        <RouterLink to="#" class="navigation__item">All shops</RouterLink>
+        <RouterLink to="/" class="navigation__item">All shops</RouterLink>
         <RouterLink to="#" class="navigation__item">Become a merchant</RouterLink>
       </nav>
       <div class="icon-group">
@@ -41,10 +41,10 @@ const handleLogOut = () => {
           <IconHeart class="favorites-icon" />
           <p class="favorites-count">0</p>
         </div>
-        <div class="cart-group">
+        <RouterLink to="reserved" class="cart-group">
           <IconCart class="cart-icon" />
           <p class="cart-count">0</p>
-        </div>
+        </RouterLink>
         <IconProfile class="profile-icon" @click="handleLogOut" />
       </div>
     </div>
