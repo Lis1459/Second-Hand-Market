@@ -2,11 +2,17 @@ import { defineStore } from "pinia";
 import { cartService } from "@/services/cart.service";
 import type { Cart } from "@/types/cart.types";
 
+interface CartStoreState {
+  carts: Cart[];
+  loadingCarts: boolean;
+  cartsError: string | null;
+}
+
 export const useCartStore = defineStore("cart", {
-  state: () => ({
-    carts: [] as Cart[],
+  state: (): CartStoreState => ({
+    carts: [],
     loadingCarts: false,
-    cartsError: null as string | null,
+    cartsError: null,
   }),
 
   getters: {

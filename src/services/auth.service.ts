@@ -1,4 +1,9 @@
-import type { AuthResponse, AuthUser, LoginRequest } from "@/types/auth.types";
+import {
+  isAuthUser,
+  type AuthResponse,
+  type AuthUser,
+  type LoginRequest,
+} from "@/types/auth.types";
 import { api } from "./api";
 
 export const authService = {
@@ -22,7 +27,10 @@ export const authService = {
   },
 
   getStoredUser(): AuthUser | null {
-    const user = localStorage.getItem("authUser");
-    return user ? JSON.parse(user) : null;
+    const raw = localStorage.getItem("authUser");
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (isAuthUser(parsed)) return parsed;
+    return null;
   },
 };

@@ -39,17 +39,24 @@ const scrollToBottom = () => {
 };
 
 onMounted(() => {
-  ws.value = new WebSocket(import.meta.env.VITE_WEBSOKET_URL);
+  ws.value = new WebSocket(import.meta.env.VITE_WEBSOCKET_URL);
 
   ws.value.onopen = () => {
     console.log("WebSocket connected");
   };
 
   ws.value.onmessage = (event) => {
-    const data: unknown = JSON.parse(event.data);
-    if (isChatMessage(data)) {
-      messages.value.push({ id: Date.now(), text: data.text, isOwn: false });
-      scrollToBottom();
+    try {
+      if (event.data !== null && typeof event.data === "object") {
+        console.log(typeof event.data);
+        const data: unknown = JSON.parse(event.data);
+        if (isChatMessage(data)) {
+          messages.value.push({ id: Date.now(), text: data.text, isOwn: false });
+          scrollToBottom();
+        }
+      }
+    } catch (error) {
+      console.error("WebSocket error", error);
     }
   };
 
@@ -68,7 +75,6 @@ onUnmounted(() => {
   }
 });
 
-// Expose openChat for parent
 defineExpose({ openChat });
 </script>
 <template>

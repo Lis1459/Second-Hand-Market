@@ -12,15 +12,27 @@ type CategoryGroup = {
   items: CategoryItem[];
 };
 
+interface productStoreState {
+  products: Product[];
+  categories: CategoryGroup[];
+  selectedCategory: string | null;
+  total: number;
+  loadingProducts: boolean;
+  loadingCategories: boolean;
+  error: string | null;
+  limit: number;
+  skip: number;
+}
+
 export const useProductStore = defineStore("product", {
-  state: () => ({
-    products: [] as Product[],
-    categories: [] as CategoryGroup[],
-    selectedCategory: null as string | null,
+  state: (): productStoreState => ({
+    products: [],
+    categories: [],
+    selectedCategory: null,
     total: 0,
     loadingProducts: false,
     loadingCategories: false,
-    error: null as string | null,
+    error: null,
     limit: 10,
     skip: 0,
   }),

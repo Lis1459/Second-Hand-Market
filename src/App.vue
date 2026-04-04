@@ -9,14 +9,12 @@ import Chat from "./components/Chat.vue";
 
 const authStore = useAuthStore();
 const route = useRoute();
-const chatRef = ref();
+const chatRef = ref<InstanceType<typeof Chat> | null>(null);
 
-// Инициализируем auth при загрузке приложения
 onMounted(() => {
   authStore.initializeAuth();
 });
 
-// Определяем, нужно ли показывать header и categoryTabs
 const showLayout = computed(() => {
   return route.name !== "login" && authStore.isAuthenticated;
 });

@@ -7,14 +7,14 @@ export interface Product {
   category: string;
 }
 
-export interface ProductsResponce {
+export interface ProductsResponse {
   products: Product[];
   total: number;
   skip: number;
   limit: number;
 }
 
-function isRecord(value: unknown): value is Record<string, unknown> {
+export function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 
@@ -23,8 +23,7 @@ export function isProductArray(data: unknown): data is Product[] {
     Array.isArray(data) &&
     data.every(
       (item) =>
-        typeof item === "object" &&
-        item !== null &&
+        isRecord(item) &&
         typeof item["id"] === "number" &&
         typeof item["title"] === "string" &&
         typeof item["price"] === "number" &&
@@ -34,7 +33,7 @@ export function isProductArray(data: unknown): data is Product[] {
   );
 }
 
-export function isProductsResponce(data: unknown): data is ProductsResponce {
+export function isProductsResponse(data: unknown): data is ProductsResponse {
   if (!isRecord(data)) return false;
 
   return (
