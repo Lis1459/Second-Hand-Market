@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { CartProduct } from "@/types/cart.types";
 
-interface Props {
+type Props = {
   product: CartProduct;
-}
+};
 
 const props = defineProps<Props>();
 console.log(props.product);

@@ -3,12 +3,14 @@ import Card from "primevue/card";
 import { computed } from "vue";
 import { IconCart, IconHeart } from "./icons";
 
-const props = defineProps({
-  thumbnailUrl: { type: String, required: true },
-  title: { type: String, required: true },
-  price: { type: Number, required: true },
-  discountPercentage: { type: Number, required: true },
-});
+type Props = {
+  thumbnailUrl: string;
+  title: string;
+  price: number;
+  discountPercentage: number;
+};
+
+const props = defineProps<Props>();
 
 const discount = computed(() => {
   return ((props.discountPercentage / 100) * props.price + props.price).toFixed(2);

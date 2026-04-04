@@ -2,9 +2,9 @@
 import type { Cart } from "@/types/cart.types";
 import ReservedCartItem from "@/components/ReservedCartItem.vue";
 
-interface Props {
+type Props = {
   cart: Cart;
-}
+};
 
 const props = defineProps<Props>();
 </script>
